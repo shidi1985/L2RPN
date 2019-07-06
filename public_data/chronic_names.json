@@ -1,0 +1,6 @@
+[{"GAME_LEVEL": "datasets", "START_ID": "0000", "NUMBER_ITERATIONS": 864, "ORIG_NUM": "0", "ORIG_MONTH": "2018-Jan", "difficulty": 2},
+ {"GAME_LEVEL": "datasets", "START_ID": "0001", "NUMBER_ITERATIONS": 576, "ORIG_NUM": "1", "ORIG_MONTH": "2018-Jan", "difficulty": 1},
+ {"GAME_LEVEL": "datasets", "START_ID": "0002", "NUMBER_ITERATIONS": 288, "ORIG_NUM": "10", "ORIG_MONTH": "2018-Jan", "difficulty": 0},
+ {"GAME_LEVEL": "datasets", "START_ID": "0003", "NUMBER_ITERATIONS": 288, "ORIG_NUM": "100", "ORIG_MONTH": "2018-Jan", "difficulty": 0}
+]
+
