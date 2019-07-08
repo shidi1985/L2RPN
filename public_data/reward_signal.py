@@ -168,3 +168,30 @@ class CustomRewardSignal(pypownet.reward_signal.RewardSignal):
                                            observation.lines_or_nodes, observation.lines_ex_nodes))
 
         return np.sum((initial_topology != current_topology))  # Sum of nodes that are different
+
+
+    def get_score(self, grid):
+        
+        current_flows_a = grid.extract_flows_a()
+        thermal_limits = grid.get_thermal_limits()
+
+        are_isolated_loads, are_isolated_prods, _ = pypownet.grid.Grid._count_isolated_loads(grid.mpc, grid.are_loads)
+
+        if np.sum(are_isolated_prods) > 1 or np.sum(are_isolated_loads) > 0:
+            score = 0
+        else:
+            line_index = (current_flows_a == 0)
+            line_index = np.invert(line_index)
+
+            current_flows_a = current_flows_a[line_index]
+            thermal_limits = thermal_limits[line_index]
+
+
+            line_margin = 1 - current_flows_a / thermal_limits
+            line_margin = np.clip(line_margin, 0, 1)
+
+            line_score = 1 - (1 - line_margin) ** 2
+
+            score = sum(line_score)
+
+        return score

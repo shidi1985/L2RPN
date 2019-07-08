@@ -806,6 +806,10 @@ class RunEnv(object):
 
         self.last_rewards = []
 
+    def get_observation(self, as_array=True):
+        observation = self.game.export_observation()
+        return observation.as_array() if as_array else observation
+
     def _get_obs(self):
         return self.game.export_observation()
 
