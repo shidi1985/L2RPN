@@ -103,9 +103,9 @@ if __name__ == '__main__':
             i, game_over, score, time_used, np.mean(score_history), np.mean(time_history)))
 
         # save res
-        np.save(results_dir + '/score_{}_chronic_{}.npy'.format(label, n_test), score_history)
-        np.save(results_dir + '/time_{}_chronic_{}.npy'.format(label, n_test), time_history)
-        print('Score and Time Saved!\n\n\n')
+        # np.save(results_dir + '/score_{}_chronic_{}.npy'.format(label, n_test), score_history)
+        # np.save(results_dir + '/time_{}_chronic_{}.npy'.format(label, n_test), time_history)
+        # print('Score and Time Saved!\n\n\n')
         sys.stdout.flush()
 
         time.sleep(1)
