@@ -4,7 +4,7 @@ https://competitions.codalab.org/competitions/22845#learn_the_details-overview
 ## Pypownet Installation
 ### Requirements:
 *   Python >= 3.6
-*   Virtual Environment Recomended
+*   Virtual Environment Recommended
 
 ```
 cd L2RPN/
