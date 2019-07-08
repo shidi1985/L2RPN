@@ -28,7 +28,7 @@ To see all the options:
 python -m pypownet.main --help
 ```
 
-## Key File and Feature Intro
+## Key Files and Features
 - data
     - Saved numpy files of action_space and generated train/val data
     - Trained model
