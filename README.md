@@ -25,7 +25,7 @@ python -m pypownet.main -f train
 ```
 To see all the options:
 ```
-python -m pypowenet --help
+python -m pypownet.main --help
 ```
 
 # License information
