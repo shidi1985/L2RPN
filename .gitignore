@@ -6,24 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-# data
-data/state_action_reward_3120/
-data/state_action_score_3120/
-data/state_action_tot_3120/
-data/
-
-parameters/default14/level0
-parameters/default14/level1
-parameters/default14/level2
-parameters/default14/test0
-parameters/default14/test1
-parameters/default14/test2
-parameters/default14/test3
-parameters/default14/test4
-parameters/default14/imit
-
-
-
 # Distribution / packaging
 .Python
 env/
