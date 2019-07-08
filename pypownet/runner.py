@@ -114,9 +114,6 @@ class Runner(object):
     self.episode_score_history = [0] * self.n_episode
     self.episode_tot_history = [0] * self.n_episode
 
-    # good actions
-    self.actions_good = [20, 160, 60, 100, 80, 40, 140, 165, 120, 170, 105, 59, 19, 5, 3]
-
     self.environment = environment
     self.verbose = verbose
     self.render = render
@@ -504,23 +501,10 @@ class Runner(object):
             action, q_predictions = self.dqn_main.act(sess, X_bacth[0].reshape((1, self.n_features)), 0)
             print('y: {}\nq_predict: {}\n'.format(np.argmax(y_batch[0]), action))
 
-          # save model
-          # if (i + 1) % 2000 == 0 and not test:
-            # print('Model Saved!')
-            # self.saver.save(sess, self.model_dir + '/1_FC_model_251_imitation_{}_batch_{}.ckpt'.format(data_size, self.batch_size))
-          # plot
-          if (i + 1) % 100  == 0 and not test:
-            # plot sample
-            plt.clf()
-            plt.plot(range(1, 177), q_predictions, 'g-', label='Prediction')
-            plt.plot(range(1, 177), y_batch[0], 'b--', label='Label')
-            plt.xlabel('Action')
-            plt.ylabel('Score')
-            plt.legend()
-            plt.title('Imitation Learning Prediction & Label')
-            plt.draw()
-            plt.pause(0.001)
-            plt.savefig(self.data_dir + '{}_imit.png'.format(i))
+          save model
+          if (i + 1) % 500 == 0 and not test:
+            print('Model Saved!')
+            self.saver.save(sess, self.model_dir + '/1_FC_model_251_imitation_{}_batch_{}.ckpt'.format(data_size, self.batch_size))
 
         # control verbose
         if (episode + 1) % 1 == 0 and hasVal and not test:
@@ -619,7 +603,6 @@ class Runner(object):
               print('has danger !!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
             top_actions = np.argsort(q_predictions)[-1: -41: -1].tolist()
-            top_actions = set(top_actions + self.actions_good)
 
             chosen_action = 0
             max_score = float('-inf')
