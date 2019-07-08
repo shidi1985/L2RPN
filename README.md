@@ -28,6 +28,26 @@ To see all the options:
 python -m pypownet.main --help
 ```
 
+## Key File and Feature Intro
+- data
+    - Saved numpy files of action_space and generated train/val data
+    - Trained model
+- example_submission
+    - Sample submission to the L2RPN competition
+- parameters
+    - reward_signal, configuration, and training chronics of different power grids
+- public_data
+    - Extra data for IEEE-14 bus
+- pypownet
+    - agent.py: Defines the Dueling DQN agent
+    - analyze_action.py: Analyze the simulation results
+    - generate_action_space.py: Generate action space
+    - main.py: Main run file, including imitation, training, and test
+    - prepare_data.py: prepare data for imitation learning
+    - runner.py: key file controling the training process
+- Run_and_Submit_agent.py
+    - Test the trained model
+
 # License information
 
 Copyright 2017-2019 GEIRINA, RTE, and INRIA (France)
